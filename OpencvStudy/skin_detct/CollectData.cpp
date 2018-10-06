@@ -89,7 +89,7 @@
 //        char sumtxt[32];
 //    
 //        sprintf(sumtxt, "/Users/wangzy/temp/%ld.png", Tool::getTimeClock());
-//        
+//        //自动手机手势和人脸数据（人脸不准），自动保存含有脸和手的图片，需要人工区分后放入到不同的文件夹下
 //        imwrite(string(sumtxt), output_mask(r));
 //    
 //

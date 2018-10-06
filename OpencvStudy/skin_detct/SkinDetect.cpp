@@ -17,8 +17,8 @@ map<string, vector<vector<float>>> getMLdata(){
     //    getcwd(buffer, MAX_PATH);
     //    cout<<string(buffer)<<endl;
     //
-   
-    string rootdir="/Users/wangzy/workspace/opencv_work/OpencvStudy/OpencvStudy/ml_data";
+   //这是存放采样数据的地方，这里不方便使用使用执行文件的相对路径，所有换了文件夹，要修改project 下ml_data的路径
+    string rootdir="/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/ml_data";
     
     vector<string> files=Tool::listFiles(rootdir);
     map<string, vector<vector<float>>> dataMap;
