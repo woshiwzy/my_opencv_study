@@ -1,6 +1,7 @@
 
 # my_opencv_study
 opencv 学习，研究，demo代码、
+开发环境:MacOS 10.13.6,Xcode 10.0
 
 2018.10.6
 
