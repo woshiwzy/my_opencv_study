@@ -44,7 +44,7 @@ map<string, vector<vector<float>>> getMLdata(){
             for(size_t j=0,jsize=subFiles.size();j<jsize;j++){
                 string imgAbsPath=absPath+"/"+subFiles.at(j);
                 Mat mat=imread(imgAbsPath);
-                //             cout<<imgAbsPath<<" "<<mat.rows<<","<<mat.cols;
+                
                 Mat newMat(resizeRect,resizeRect,CV_32F);
                 
                 resize(mat, newMat, Size(resizeRect,resizeRect));//归一化，都变成240X240大小后再采集特征
@@ -55,10 +55,7 @@ map<string, vector<vector<float>>> getMLdata(){
                 descriptersVector.push_back(descripters);
                 
             }
-            
             dataMap[file]=descriptersVector;//存放到Map 中去
-            
-            
         }
     }
     
