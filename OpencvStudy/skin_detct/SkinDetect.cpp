@@ -298,8 +298,9 @@ int main()
         }
 
         output_mask.setTo(0);//使用前重置一下
+        //绘制轮廓
         drawContours(output_mask, filterContours, -1, Scalar(255,0,0), CV_FILLED); //8, hierarchy);//把肤色区域绘制进去
-        input_image.copyTo(output_image, output_mask);//成功把肤色区域拷贝过去
+        input_image.copyTo(output_image, output_mask);//成功把肤色区域拷贝到output_image
 
 
         //====================
@@ -312,8 +313,8 @@ int main()
         Tool::drawText(Point(100,100), string(fpst), input_image);
         Tool::drawText(Point(100,100), string(fpst), output_image);
         //窗口太多会y影响帧率
-        imshow("input image msk", output_mask);//Mask窗口
-        imshow("input image", input_image);//原始图
+//        imshow("input image msk", output_mask);//Mask窗口
+//        imshow("input image", input_image);//原始图
         imshow("output image", output_image);//输出图
 
         output_image.setTo(0);
