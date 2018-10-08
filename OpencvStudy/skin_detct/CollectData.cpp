@@ -12,7 +12,7 @@
 //string output_image_window ="output_image_window";
 //string input_image_window="input_image_window";
 //
-
+//
 //int main()
 //{
 //VideoCapture cam(0);
@@ -72,14 +72,14 @@
 //            Tool::drawRectangle(output_image, r);
 //        }
 //    }
-//    
+//
 //    output_mask.setTo(0);
-//    
+//
 //    drawContours(output_mask, filterContours, -1, Scalar(255,0,0), CV_FILLED); //8, hierarchy);
-//    
+//
 //    input_image.copyTo(output_image, output_mask);
-//    
-//    
+//
+//
 //    cout<<"最终轮廓："<<filterContours.size()<<endl;
 //    for (size_t i = 0; i < filterContours.size(); i++)
 //    {
@@ -87,22 +87,22 @@
 ////        Tool::drawRectangle(output_mask, r);
 //
 //        char sumtxt[32];
-//    
+//
 //        sprintf(sumtxt, "/Users/wangzy/temp/%ld.png", Tool::getTimeClock());
 //        //自动手机手势和人脸数据（人脸不准），自动保存含有脸和手的图片，需要人工区分后放入到不同的文件夹下
 //        imwrite(string(sumtxt), output_mask(r));
-//    
+//
 //
 //        Tool::drawRectangle(input_image, r);
-//        
+//
 //    }
-//    
-//    
-//    
+//
+//
+//
 //
 ////        drawContours(input_image, filterContours, -1, Scalar(255,0,0), CV_FILLED); //8, hierarchy);
-//    
-//    
+//
+//
 //    //====================
 //    t = ((double)cv::getTickCount() - t) / cv::getTickFrequency();
 //    fps = 1.0 / t;
@@ -112,8 +112,8 @@
 //    Tool::drawText(Point(100,100), string(fpst), output_mask);
 //
 //
-////    imshow(output_mask_window, output_mask);
-////        imshow(input_image_window, input_image);
+//    imshow(output_mask_window, output_mask);
+//    imshow(input_image_window, input_image);
 //    imshow(output_image_window, output_image);
 //
 //    output_image.setTo(0);
