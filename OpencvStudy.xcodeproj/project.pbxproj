@@ -30,6 +30,8 @@
 		8022B5862167A7A8005E39A7 /* CreateMLData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CreateMLData.cpp; sourceTree = "<group>"; };
 		8022B58821685CA5005E39A7 /* ImageTool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImageTool.hpp; sourceTree = "<group>"; };
 		805F02932148990400FE8595 /* OpencvStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpencvStudy; sourceTree = BUILT_PRODUCTS_DIR; };
+		806837DB2191CEA200881922 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		806837DC2191D6C800881922 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		808A933C2160646400200F31 /* SkinDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkinDetect.cpp; sourceTree = "<group>"; };
 		808A933E2160648600200F31 /* Tool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tool.hpp; sourceTree = "<group>"; };
 		808A933F2160648E00200F31 /* headers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = headers.hpp; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		805F028A2148990300FE8595 = {
 			isa = PBXGroup;
 			children = (
+				806837DB2191CEA200881922 /* Info.plist */,
+				806837DC2191D6C800881922 /* readme.txt */,
 				805F02952148990400FE8595 /* OpencvStudy */,
 				805F02942148990400FE8595 /* Products */,
 			);
@@ -271,6 +275,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-lopencv_calib3d",
@@ -299,6 +304,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-lopencv_calib3d",

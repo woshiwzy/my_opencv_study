@@ -12,11 +12,7 @@ int sacnWidnowSize=resizeRect;
 //从数据文件夹中生成训练数据,这里的数据可以通过CreateMLdata.cpp采集后，人工区别后放到ml_data下对应的文件夹中
 map<string, vector<vector<float>>> getMLdata(){
 
-    //    int MAX_PATH=120;
-    //    char   buffer[MAX_PATH];
-    //    getcwd(buffer, MAX_PATH);
-    //    cout<<string(buffer)<<endl;
-    //
+   
    //这是存放采样数据的地方，这里不方便使用使用执行文件的相对路径，所有换了文件夹，要修改project 下ml_data的路径
     string rootdir="/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/ml_data";
 
@@ -114,10 +110,9 @@ string getLabelFromIndex(int predicated){
 }
 
 
-
+//======================================================================================================================================================
 int main()
 {
-
 
     //加载机器学习数据
     Ptr<KNearest> knn= KNearest::create();
@@ -128,13 +123,14 @@ int main()
     map<string,vector<vector<float>>>::iterator it;
 
 
-
     it = dataMap.begin();
     long dataMatCol=it->second.at(0).size();//生成学习数据列
     int dataMatRow=0;
 
     vector<vector<float>> dataMatVectros;
+    
     vector<int> labelMatVector;
+//    vector<string> labelMatStringVector;
 
     Mat dataMat;
 
@@ -161,6 +157,7 @@ int main()
             dataMat.push_back(dataItemMat);//把所有的单个Mat 组装成个一个大的训练集Mat
 
             labelMatVector.push_back(getLabelMatNumber(it->first));//所有的数据label
+//          abelMatStringVector.push_back(it->first);
 
 
         }
@@ -175,6 +172,8 @@ int main()
 
     //设置训练数据
     Ptr<TrainData> tData= TrainData::create(dataMat, ROW_SAMPLE, labelMat);
+//     Ptr<TrainData> tData= TrainData::create(dataMat, ROW_SAMPLE, labelMatStringVector);
+    
     knn->train(tData);
 
     cout<<"总的机器学习数据行:"<<dataMatRow<<" 列："<<dataMatCol<<endl;
@@ -269,10 +268,14 @@ int main()
                 }
 
                 //识别结果，因为是KNN所有无论如何总会得到一个结果，这个结果必然是LabelMat中的一个
-                float response=knn->predict(inputHogMat);//得到的结果必然是LablMat中的一个
+                
+                Mat results;
+                float response=knn->predict(inputHogMat,results);//得到的结果必然是LablMat中的一个
+                
+                
                 string result=getLabelFromIndex( response);//对应成文字
                 
-                if(result.compare("face")!=0 && result.compare("cabinet")!=0){
+                if(/*result.compare("face")!=0 &&*/ result.compare("cabinet")!=0){
                     
                     //并且把这些区域标记出来
                     Tool::drawRectangle(output_image, r);
@@ -287,6 +290,7 @@ int main()
                     Tool::drawText(r.tl(), result, output_mask);
                     Tool::drawText(r.tl(), result, input_image);
                     Tool::drawText(r.tl(), result, output_image);
+                    cout<<"resultmat:"<<results<<endl;
 
                     cout<<"结果result:"<<" response: "<<result<<endl;
                 }
@@ -314,8 +318,8 @@ int main()
         Tool::drawText(Point(100,100), string(fpst), output_image);
         //窗口太多会y影响帧率
 //        imshow("input image msk", output_mask);//Mask窗口
-//        imshow("input image", input_image);//原始图
-        imshow("output image", output_image);//输出图
+        imshow("input image", input_image);//原始图
+//        imshow("output image", output_image);//输出图
 
         output_image.setTo(0);
 
