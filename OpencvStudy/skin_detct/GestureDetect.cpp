@@ -1,3 +1,4 @@
+//手势识别
 #include "headers.hpp"
 #include "Tool.hpp"
 
@@ -12,7 +13,7 @@ int sacnWidnowSize=resizeRect;
 //从数据文件夹中生成训练数据,这里的数据可以通过CreateMLdata.cpp采集后，人工区别后放到ml_data下对应的文件夹中
 map<string, vector<vector<float>>> getMLdata(){
 
-   
+
    //这是存放采样数据的地方，这里不方便使用使用执行文件的相对路径，所有换了文件夹，要修改project 下ml_data的路径
     string rootdir="/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/ml_data";
 
@@ -79,8 +80,8 @@ int getLabelMatNumber(string label){
         }else if(label.compare("face")==0){
             return 7;
         }else if(label.compare("cabinet")==0){
-         
-            
+
+
             return 8;
         }
 //    }
@@ -128,7 +129,7 @@ int main()
     int dataMatRow=0;
 
     vector<vector<float>> dataMatVectros;
-    
+
     vector<int> labelMatVector;
 //    vector<string> labelMatStringVector;
 
@@ -173,7 +174,7 @@ int main()
     //设置训练数据
     Ptr<TrainData> tData= TrainData::create(dataMat, ROW_SAMPLE, labelMat);
 //     Ptr<TrainData> tData= TrainData::create(dataMat, ROW_SAMPLE, labelMatStringVector);
-    
+
     knn->train(tData);
 
     cout<<"总的机器学习数据行:"<<dataMatRow<<" 列："<<dataMatCol<<endl;
@@ -199,7 +200,7 @@ int main()
                                          Size(sacnWidnowSize/2,sacnWidnowSize/2),
                                          Size(sacnWidnowSize/4,sacnWidnowSize/4),
                                          Size(sacnWidnowSize/4,sacnWidnowSize/4),9);
-    
+
 
 
     while(true)
@@ -268,15 +269,15 @@ int main()
                 }
 
                 //识别结果，因为是KNN所有无论如何总会得到一个结果，这个结果必然是LabelMat中的一个
-                
+
                 Mat results;
                 float response=knn->predict(inputHogMat,results);//得到的结果必然是LablMat中的一个
-                
-                
+
+
                 string result=getLabelFromIndex( response);//对应成文字
-                
+
                 if(/*result.compare("face")!=0 &&*/ result.compare("cabinet")!=0){
-                    
+
                     //并且把这些区域标记出来
                     Tool::drawRectangle(output_image, r);
                     Tool::drawRectangle(output_mask, r);
@@ -284,8 +285,8 @@ int main()
 
 
                     filterContours.push_back(contours[i]);
-                    
-                    
+
+
                     //在多种窗口中绘制出来
                     Tool::drawText(r.tl(), result, output_mask);
                     Tool::drawText(r.tl(), result, input_image);
