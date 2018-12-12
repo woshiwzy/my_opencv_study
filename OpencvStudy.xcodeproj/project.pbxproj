@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		8022B58321676D40005E39A7 /* CollectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B58221676D40005E39A7 /* CollectData.cpp */; };
 		8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B5862167A7A8005E39A7 /* CreateMLData.cpp */; };
-		808A933D2160646400200F31 /* SkinDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A933C2160646400200F31 /* SkinDetect.cpp */; };
+		80635C6E219EACA50034D139 /* readshowpix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80635C6D219EACA50034D139 /* readshowpix.cpp */; };
+		80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 80635C6F219EB0610034D139 /* Histogram1D.hpp */; };
+		808A933D2160646400200F31 /* GestureDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A933C2160646400200F31 /* GestureDetect.cpp */; };
+		80D1CCC7219A62CB006B1D2E /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D1CCC6219A62CB006B1D2E /* Test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,11 +33,14 @@
 		8022B5862167A7A8005E39A7 /* CreateMLData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CreateMLData.cpp; sourceTree = "<group>"; };
 		8022B58821685CA5005E39A7 /* ImageTool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImageTool.hpp; sourceTree = "<group>"; };
 		805F02932148990400FE8595 /* OpencvStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpencvStudy; sourceTree = BUILT_PRODUCTS_DIR; };
+		80635C6D219EACA50034D139 /* readshowpix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = readshowpix.cpp; sourceTree = "<group>"; };
+		80635C6F219EB0610034D139 /* Histogram1D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Histogram1D.hpp; sourceTree = "<group>"; };
 		806837DB2191CEA200881922 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		806837DC2191D6C800881922 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		808A933C2160646400200F31 /* SkinDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkinDetect.cpp; sourceTree = "<group>"; };
+		808A933C2160646400200F31 /* GestureDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureDetect.cpp; sourceTree = "<group>"; };
 		808A933E2160648600200F31 /* Tool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tool.hpp; sourceTree = "<group>"; };
 		808A933F2160648E00200F31 /* headers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = headers.hpp; sourceTree = "<group>"; };
+		80D1CCC6219A62CB006B1D2E /* Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,11 @@
 		808A93402160661A00200F31 /* skin_detct */ = {
 			isa = PBXGroup;
 			children = (
-				808A933C2160646400200F31 /* SkinDetect.cpp */,
+				808A933C2160646400200F31 /* GestureDetect.cpp */,
 				8022B5862167A7A8005E39A7 /* CreateMLData.cpp */,
 				8022B58221676D40005E39A7 /* CollectData.cpp */,
+				80D1CCC6219A62CB006B1D2E /* Test.cpp */,
+				80635C6D219EACA50034D139 /* readshowpix.cpp */,
 			);
 			path = skin_detct;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 				8022B58821685CA5005E39A7 /* ImageTool.hpp */,
 				808A933F2160648E00200F31 /* headers.hpp */,
 				808A933E2160648600200F31 /* Tool.hpp */,
+				80635C6F219EB0610034D139 /* Histogram1D.hpp */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -153,7 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8022B58321676D40005E39A7 /* CollectData.cpp in Sources */,
-				808A933D2160646400200F31 /* SkinDetect.cpp in Sources */,
+				80D1CCC7219A62CB006B1D2E /* Test.cpp in Sources */,
+				80635C6E219EACA50034D139 /* readshowpix.cpp in Sources */,
+				80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */,
+				808A933D2160646400200F31 /* GestureDetect.cpp in Sources */,
 				8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

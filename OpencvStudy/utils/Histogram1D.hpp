@@ -4,6 +4,7 @@
 //#include "opencv2/highgui/highgui.hpp"
 #include "headers.hpp"
 
+
 //计算图像直方图
 class Histogram1D
 {
@@ -19,7 +20,7 @@ public:
         hranges[0] = 0.0;
         hranges[1] = 256.0;
         ranges[0] = hranges;
-        channels[0] = 0;
+        channels[0] = 1;
     }
     cv::Mat getHistogram(const cv::Mat& image)
     {
