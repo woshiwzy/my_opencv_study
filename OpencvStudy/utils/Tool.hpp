@@ -25,30 +25,33 @@ int sumWhiteColorCount(Mat &src);
 float sumWhiteColorCountPercent(Mat &src);
 void drawCircle(Mat &img, Point center, int radius);
 long findBGRCount(int b,int g,int r,Mat& inputMat,int delta);
+long getRandLongNo();
+long string2Int(string intStr);
+    
 
 //统计相同像素的个数
 long findBGRCount(int sb,int sg,int sr,Mat& mat,int delta=0){
+
+
+Mat_<Vec3b>::iterator it = mat.begin<Vec3b>();
+Mat_<Vec3b>::iterator itend = mat.end<Vec3b>();
+long eqCount=0;
+while (it != itend)
+{
+    int b=(int)(*it)[0];
+    int g=(int)(*it)[1];
+    int r=(int)(*it)[2];
+    int deltaB=abs(b-sb);
+    int deltaG=abs(g-sg);
+    int deltaR=abs(r-sr);
     
-    
-    Mat_<Vec3b>::iterator it = mat.begin<Vec3b>();
-    Mat_<Vec3b>::iterator itend = mat.end<Vec3b>();
-    long eqCount=0;
-    while (it != itend)
-    {
-        int b=(int)(*it)[0];
-        int g=(int)(*it)[1];
-        int r=(int)(*it)[2];
-        int deltaB=abs(b-sb);
-        int deltaG=abs(g-sg);
-        int deltaR=abs(r-sr);
-        
-        if(deltaB<=delta && deltaG<=delta && deltaR<=delta){
-            eqCount++;
-        }
-        it++;
+    if(deltaB<=delta && deltaG<=delta && deltaR<=delta){
+        eqCount++;
     }
-    
-    return eqCount;
+    it++;
+}
+
+return eqCount;
 }
 
 
@@ -64,12 +67,12 @@ void printTime(){
 time_t tt = time(NULL);//这句返回的只是一个时间cuo
 tm* t= localtime(&tt);
 printf("%d-%02d-%02d %02d:%02d:%02d\n",
-       t->tm_year + 1900,
-       t->tm_mon + 1,
-       t->tm_mday,
-       t->tm_hour,
-       t->tm_min,
-       t->tm_sec);
+   t->tm_year + 1900,
+   t->tm_mon + 1,
+   t->tm_mday,
+   t->tm_hour,
+   t->tm_min,
+   t->tm_sec);
 
 printf("now:%li",getTimeLabel());
 }
@@ -118,11 +121,11 @@ dir = opendir(dirRoot.c_str()); ///open the dir
 while((ptr = readdir(dir)) != NULL) ///read the list of this dir
 {
 
-    
-    string fname=string(ptr->d_name);
-    if("."!=fname && ".."!=fname && ".DS_Store"!=fname){
-         subfiles.push_back(ptr->d_name);
-    }
+
+string fname=string(ptr->d_name);
+if("."!=fname && ".."!=fname && ".DS_Store"!=fname){
+     subfiles.push_back(ptr->d_name);
+}
 
 }
 closedir(dir);
@@ -152,12 +155,12 @@ circle(img, center, radius,scalar,thickless);
 void getSkinOutput(Mat &input_image,Mat& output_mask){
 
 if(input_image.size().width!=output_mask.size().width ||
-   input_image.size().height!=output_mask.size().height){
-    
-    cout<<"error:output_mask = Mat::zeros(input_image.size(), CV_8UC1);"<<endl;
-    
-    return;
-    
+input_image.size().height!=output_mask.size().height){
+
+cout<<"error:output_mask = Mat::zeros(input_image.size(), CV_8UC1);"<<endl;
+
+return;
+
 }
 
 Mat skinCrCbHist = Mat::zeros(Size(256, 256), CV_8UC1);
@@ -172,15 +175,15 @@ cvtColor(input_image, ycrcb_image, CV_BGR2YCrCb); //首先转换成到YCrCb空�
 
 for(int i = 0; i < input_image.rows; i++) //利用椭圆皮肤模型进行皮肤检测
 {
-    uchar* p = (uchar*)output_mask.ptr<uchar>(i);
-    Vec3b* ycrcb = (Vec3b*)ycrcb_image.ptr<Vec3b>(i);
-    for(int j = 0; j < input_image.cols; j++)
-    {
-        if(skinCrCbHist.at<uchar>(ycrcb[j][1], ycrcb[j][2]) > 0){
-            p[j] = 255;
-        }
-        
+uchar* p = (uchar*)output_mask.ptr<uchar>(i);
+Vec3b* ycrcb = (Vec3b*)ycrcb_image.ptr<Vec3b>(i);
+for(int j = 0; j < input_image.cols; j++)
+{
+    if(skinCrCbHist.at<uchar>(ycrcb[j][1], ycrcb[j][2]) > 0){
+        p[j] = 255;
     }
+    
+}
 }
 
 morphologyEx(output_mask,output_mask,MORPH_CLOSE,element);
@@ -191,57 +194,73 @@ morphologyEx(output_mask,output_mask,MORPH_CLOSE,element);
 void getRgbPercent(Mat &image,Scalar &rgb){
 
 for(int i=0;i<image.rows;i++){
-    for(int j=0;j<image.cols;j++)
-    {
-        
-        Vec3b b3vec =image.at<Vec3b>(i,j);
-        
-        int b=image.at<Vec3b>(i,j)[0];
-        int g=image.at<Vec3b>(i,j)[1];
-        int r=image.at<Vec3b>(i,j)[2];
-        
-        
-    }
+for(int j=0;j<image.cols;j++)
+{
+    
+    Vec3b b3vec =image.at<Vec3b>(i,j);
+    
+    int b=image.at<Vec3b>(i,j)[0];
+    int g=image.at<Vec3b>(i,j)[1];
+    int r=image.at<Vec3b>(i,j)[2];
+    
+    
+}
 }
 }
 
 
 
 /*
- 统计二值化后白像素个数
- */
+统计二值化后白像素个数
+*/
 int sumWhiteColorCount(Mat &src)
 {
-    
-    int counter = 0;
-    //迭代器访问像素点
-    Mat_<uchar>::iterator it = src.begin<uchar>();
-    Mat_<uchar>::iterator itend = src.end<uchar>();
-    for (; it!=itend; ++it)
-    {
-        if((*it)>0) counter+=1;//二值化后，像素点是0或者255
-    }
-    return counter;
+
+int counter = 0;
+//迭代器访问像素点
+Mat_<uchar>::iterator it = src.begin<uchar>();
+Mat_<uchar>::iterator itend = src.end<uchar>();
+for (; it!=itend; ++it)
+{
+    if((*it)>0) counter+=1;//二值化后，像素点是0或者255
+}
+return counter;
 }
 
 /*
- 统计二值化后白像素个数
- */
+统计二值化后白像素个数
+*/
 float sumWhiteColorCountPercent(Mat &src)
 {
-    
-    int counter = 0;
-    //迭代器访问像素点
-    Mat_<uchar>::iterator it = src.begin<uchar>();
-    Mat_<uchar>::iterator itend = src.end<uchar>();
-    for (; it!=itend; ++it)
-    {
-        if((*it)>0) counter+=1;//二值化后，像素点是0或者255
-    }
-    
-    int total=src.cols*src.rows;
-    return counter*1.0/total;
+
+int counter = 0;
+//迭代器访问像素点
+Mat_<uchar>::iterator it = src.begin<uchar>();
+Mat_<uchar>::iterator itend = src.end<uchar>();
+for (; it!=itend; ++it)
+{
+    if((*it)>0) counter+=1;//二值化后，像素点是0或者255
 }
 
+int total=src.cols*src.rows;
+return counter*1.0/total;
+}
+
+
+long getRandLongNo(){
+    
+    srand(time(0));
+    return rand();
+}
+
+
+    long string2Int(string intStr){
+        stringstream ss;
+        ss<<intStr;
+        int labelInt;
+        ss>>labelInt;
+        return labelInt;
+    }
+    
 }
 
