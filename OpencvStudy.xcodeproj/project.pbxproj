@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8022B58321676D40005E39A7 /* CollectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B58221676D40005E39A7 /* CollectData.cpp */; };
 		8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B5862167A7A8005E39A7 /* CreateMLData.cpp */; };
+		803FF62321E7711800096FB6 /* ConvexHullDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 803FF62121E7711800096FB6 /* ConvexHullDemo.cpp */; };
 		80635C6E219EACA50034D139 /* readshowpix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80635C6D219EACA50034D139 /* readshowpix.cpp */; };
 		80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 80635C6F219EB0610034D139 /* Histogram1D.hpp */; };
 		808A933D2160646400200F31 /* GestureDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A933C2160646400200F31 /* GestureDetect.cpp */; };
@@ -33,6 +34,7 @@
 		8022B5852167A5F4005E39A7 /* ml_data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ml_data; sourceTree = "<group>"; };
 		8022B5862167A7A8005E39A7 /* CreateMLData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CreateMLData.cpp; sourceTree = "<group>"; };
 		8022B58821685CA5005E39A7 /* ImageTool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ImageTool.hpp; sourceTree = "<group>"; };
+		803FF62121E7711800096FB6 /* ConvexHullDemo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConvexHullDemo.cpp; sourceTree = "<group>"; };
 		805F02932148990400FE8595 /* OpencvStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpencvStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		80635C6D219EACA50034D139 /* readshowpix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = readshowpix.cpp; sourceTree = "<group>"; };
 		80635C6F219EB0610034D139 /* Histogram1D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Histogram1D.hpp; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				8022B58221676D40005E39A7 /* CollectData.cpp */,
 				80D1CCC6219A62CB006B1D2E /* Test.cpp */,
 				80635C6D219EACA50034D139 /* readshowpix.cpp */,
+				803FF62121E7711800096FB6 /* ConvexHullDemo.cpp */,
 			);
 			path = skin_detct;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803FF62321E7711800096FB6 /* ConvexHullDemo.cpp in Sources */,
 				80AB3ECF21DE541C00F114BE /* GestureDetectV2.cpp in Sources */,
 				8022B58321676D40005E39A7 /* CollectData.cpp in Sources */,
 				80D1CCC7219A62CB006B1D2E /* Test.cpp in Sources */,

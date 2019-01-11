@@ -16,17 +16,39 @@ using namespace ml;
 
 namespace Tool {
 
-
+//获取时间戳
 long getTimeLabel();
+//绘制矩形
 void drawRectangle(Mat& img,Rect box);
+//绘制文字
 void drawText(Point point,string label,Mat& mat);
-vector<string> listFiles(string dir);    
+//查找文件夹
+vector<string> listFiles(string dir);
+//统计白色像素
 int sumWhiteColorCount(Mat &src);
+//统计像素百分比
 float sumWhiteColorCountPercent(Mat &src);
+//绘制圆
 void drawCircle(Mat &img, Point center, int radius);
+//查找像素的数量
 long findBGRCount(int b,int g,int r,Mat& inputMat,int delta);
+
+//获取随机数
 long getRandLongNo();
+
+//字符串转整数字
 long string2Int(string intStr);
+
+//获取随机颜色
+Scalar randomColor();
+    
+    
+Scalar randomColor(){
+    RNG rng(cv::getTickCount());
+    int icolor = (unsigned)rng;
+    return Scalar(icolor & 255, (icolor >> 8) & 255, (icolor >> 16) & 255);
+}
+    
     
 
 //统计相同像素的个数
@@ -58,7 +80,7 @@ return eqCount;
 void drawText(Point point,string label,Mat& resultMat){
 
 
-putText(resultMat, label, point, CV_FONT_HERSHEY_PLAIN, 2.0f, Scalar(255,100,255));
+putText(resultMat, label, point, CV_FONT_HERSHEY_PLAIN, 2.0f, Tool::randomColor());
 
 }
 
