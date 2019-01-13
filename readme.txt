@@ -5,3 +5,7 @@ CreateMLData 生成训练数据
 CollectData 手机数据
 Test 测试工具类
 收拾识别定位到具体的样本
+
+
+number_rec
+   下面为手写数字识别

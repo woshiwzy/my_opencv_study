@@ -14,6 +14,8 @@
 		80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 80635C6F219EB0610034D139 /* Histogram1D.hpp */; };
 		808A933D2160646400200F31 /* GestureDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 808A933C2160646400200F31 /* GestureDetect.cpp */; };
 		80AB3ECF21DE541C00F114BE /* GestureDetectV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80AB3ECD21DE541C00F114BE /* GestureDetectV2.cpp */; };
+		80BE987521EB07A80099984D /* Demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BE987421EB07A80099984D /* Demo.cpp */; };
+		80BE987721EB07AF0099984D /* CollectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BE987621EB07AF0099984D /* CollectData.cpp */; };
 		80D1CCC7219A62CB006B1D2E /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D1CCC6219A62CB006B1D2E /* Test.cpp */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,10 @@
 		808A933E2160648600200F31 /* Tool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tool.hpp; sourceTree = "<group>"; };
 		808A933F2160648E00200F31 /* headers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = headers.hpp; sourceTree = "<group>"; };
 		80AB3ECD21DE541C00F114BE /* GestureDetectV2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GestureDetectV2.cpp; sourceTree = "<group>"; };
+		80BE987121EB071B0099984D /* number_data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = number_data; sourceTree = "<group>"; };
+		80BE987321EB07890099984D /* NumberRec.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NumberRec.hpp; sourceTree = "<group>"; };
+		80BE987421EB07A80099984D /* Demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Demo.cpp; sourceTree = "<group>"; };
+		80BE987621EB07AF0099984D /* CollectData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollectData.cpp; sourceTree = "<group>"; };
 		80D1CCC6219A62CB006B1D2E /* Test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,15 +87,17 @@
 		805F02952148990400FE8595 /* OpencvStudy */ = {
 			isa = PBXGroup;
 			children = (
-				807DB29321E209E900BDAC33 /* Rename.py */,
 				8022B5852167A5F4005E39A7 /* ml_data */,
+				80BE987121EB071B0099984D /* number_data */,
+				807DB29321E209E900BDAC33 /* Rename.py */,
 				808A93412160662C00200F31 /* utils */,
-				808A93402160661A00200F31 /* skin_detct */,
+				808A93402160661A00200F31 /* skin_gesture_detct */,
+				80BE987221EB076B0099984D /* number_rec */,
 			);
 			path = OpencvStudy;
 			sourceTree = "<group>";
 		};
-		808A93402160661A00200F31 /* skin_detct */ = {
+		808A93402160661A00200F31 /* skin_gesture_detct */ = {
 			isa = PBXGroup;
 			children = (
 				808A933C2160646400200F31 /* GestureDetect.cpp */,
@@ -100,7 +108,7 @@
 				80635C6D219EACA50034D139 /* readshowpix.cpp */,
 				803FF62121E7711800096FB6 /* ConvexHullDemo.cpp */,
 			);
-			path = skin_detct;
+			path = skin_gesture_detct;
 			sourceTree = "<group>";
 		};
 		808A93412160662C00200F31 /* utils */ = {
@@ -113,6 +121,16 @@
 				807DB27E21E1DD1500BDAC33 /* DescripterFilePair.hpp */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		80BE987221EB076B0099984D /* number_rec */ = {
+			isa = PBXGroup;
+			children = (
+				80BE987621EB07AF0099984D /* CollectData.cpp */,
+				80BE987421EB07A80099984D /* Demo.cpp */,
+				80BE987321EB07890099984D /* NumberRec.hpp */,
+			);
+			path = number_rec;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BE987521EB07A80099984D /* Demo.cpp in Sources */,
 				803FF62321E7711800096FB6 /* ConvexHullDemo.cpp in Sources */,
 				80AB3ECF21DE541C00F114BE /* GestureDetectV2.cpp in Sources */,
 				8022B58321676D40005E39A7 /* CollectData.cpp in Sources */,
 				80D1CCC7219A62CB006B1D2E /* Test.cpp in Sources */,
 				80635C6E219EACA50034D139 /* readshowpix.cpp in Sources */,
+				80BE987721EB07AF0099984D /* CollectData.cpp in Sources */,
 				80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */,
 				808A933D2160646400200F31 /* GestureDetect.cpp in Sources */,
 				8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */,
