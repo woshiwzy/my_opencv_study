@@ -1,7 +1,8 @@
 import os
 
 if __name__ == '__main__':
-    rootDir = "/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/ml_data"
+#    rootDir = "/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/ml_data"
+    rootDir = "/Users/wangzy/study/opencv/OpencvStudy/OpencvStudy/number_data"
     files = os.listdir(rootDir)
     total = 0
     allfiles = []
