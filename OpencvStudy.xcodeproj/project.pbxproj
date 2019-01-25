@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80050F3021FA0278008CB718 /* camshift.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80050F2E21FA0278008CB718 /* camshift.cpp */; };
+		80050F3221FA041A008CB718 /* lkdemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80050F3121FA041A008CB718 /* lkdemo.cpp */; };
+		80050F3421FA0643008CB718 /* objectDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80050F3321FA0643008CB718 /* objectDetection.cpp */; };
 		8022B58321676D40005E39A7 /* CollectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B58221676D40005E39A7 /* CollectData.cpp */; };
 		8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8022B5862167A7A8005E39A7 /* CreateMLData.cpp */; };
 		803FF62321E7711800096FB6 /* ConvexHullDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 803FF62121E7711800096FB6 /* ConvexHullDemo.cpp */; };
@@ -32,6 +35,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80050F2E21FA0278008CB718 /* camshift.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camshift.cpp; sourceTree = "<group>"; };
+		80050F3121FA041A008CB718 /* lkdemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lkdemo.cpp; sourceTree = "<group>"; };
+		80050F3321FA0643008CB718 /* objectDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = objectDetection.cpp; sourceTree = "<group>"; };
+		80050F3521FA06D4008CB718 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
+		80050F3621FA06D4008CB718 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		8022B58221676D40005E39A7 /* CollectData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CollectData.cpp; sourceTree = "<group>"; };
 		8022B5852167A5F4005E39A7 /* ml_data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ml_data; sourceTree = "<group>"; };
 		8022B5862167A7A8005E39A7 /* CreateMLData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CreateMLData.cpp; sourceTree = "<group>"; };
@@ -66,6 +74,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80050F2D21FA024E008CB718 /* demos */ = {
+			isa = PBXGroup;
+			children = (
+				80050F3521FA06D4008CB718 /* haarcascade_eye_tree_eyeglasses.xml */,
+				80050F3621FA06D4008CB718 /* haarcascade_frontalface_alt.xml */,
+				80050F3321FA0643008CB718 /* objectDetection.cpp */,
+				80050F3121FA041A008CB718 /* lkdemo.cpp */,
+				80050F2E21FA0278008CB718 /* camshift.cpp */,
+			);
+			path = demos;
+			sourceTree = "<group>";
+		};
 		805F028A2148990300FE8595 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +107,7 @@
 		805F02952148990400FE8595 /* OpencvStudy */ = {
 			isa = PBXGroup;
 			children = (
+				80050F2D21FA024E008CB718 /* demos */,
 				8022B5852167A5F4005E39A7 /* ml_data */,
 				80BE987121EB071B0099984D /* number_data */,
 				807DB29321E209E900BDAC33 /* Rename.py */,
@@ -197,8 +218,11 @@
 				80635C6E219EACA50034D139 /* readshowpix.cpp in Sources */,
 				80BE987721EB07AF0099984D /* CollectData.cpp in Sources */,
 				80635C70219EB0610034D139 /* Histogram1D.hpp in Sources */,
+				80050F3421FA0643008CB718 /* objectDetection.cpp in Sources */,
 				808A933D2160646400200F31 /* GestureDetect.cpp in Sources */,
+				80050F3021FA0278008CB718 /* camshift.cpp in Sources */,
 				8022B5872167A7A8005E39A7 /* CreateMLData.cpp in Sources */,
+				80050F3221FA041A008CB718 /* lkdemo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
